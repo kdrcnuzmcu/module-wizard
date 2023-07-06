@@ -85,12 +85,12 @@ class PandasOptions():
     def SetOptions(self, *args):
         Choices = list(args)
         for i in Choices:
-            print(self.Options[str(i)])
+            # print(self.Options[str(i)])
             pd.set_option(self.Options[str(i)], None)
     def ResetOptions(self, *args):
         Choices = list(args)
         for i in Choices:
-            print(self.Options[str(i)])
+            # print(self.Options[str(i)])
             pd.reset_option(self.Options[str(i)])
 
 class ImportModules():
@@ -115,12 +115,15 @@ class ImportModules():
             "Lasso"
         ]
     }
+
     def PrintModules(self):
         for key, value in self.Modules.items():
             print(f"{key}: {value}")
 
     def Importing(self, profile):
-        modules = Profiles[profile]
+        modules = self.Profiles[profile]
         for module in modules:
             print(module)
             __import__(profile,  fromlist=[module])
+
+ImportModules().Importing("sklearn.linear_model")
