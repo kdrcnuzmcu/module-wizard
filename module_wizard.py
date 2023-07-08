@@ -95,12 +95,6 @@ class PandasOptions():
 
 class ImportModules():
     Profiles = {
-        "basics": [
-            "pandas",
-            "numpy",
-            "matplotlib",
-            "seaborn"
-        ],
         "sklearn.preprocessing": [
             "LabelEncoder",
             "OneHotEncoder",
@@ -113,17 +107,44 @@ class ImportModules():
             "Ridge",
             "ElasticNet",
             "Lasso"
+        ],
+        "sklearn.metrics": [
+            "mean_squared_error",
+            "mean_absolute_error",
+            "mean_absolute_percentage_error"
+        ],
+        "sklearn.model_selection": [
+            "train_test_split",
+            "cross_val_score",
+            "GridSearchCV",
+            "RandomizedSearchCV",
+            "TimeSeriesSplit"
         ]
     }
-
-    def PrintModules(self):
-        for key, value in self.Modules.items():
-            print(f"{key}: {value}")
-
-    def Importing(self, profile):
+    def Basics(self):
+        BasicModules = {
+            "pandas": "pd",
+            "numpy": "np",
+            "matplotlib.pyplot": "plt",
+            "seaborn": "sns"
+        }
+        for module, abbr in BasicModules.items():
+            print(module, abbr)
+            globals()[abbr] = __import__(module)
+    def TreeModels(self, kind):
+        if kind == "regressor":
+            CBR = __import__("catboost", fromlist=["CatBoostRegressor"])
+            LGBMR = __import__("lightgbm", fromlist=["LGBMRegressor"])
+            XGBR = __import__("xgboost", fromlist=["XGBRegressor"])
+            return CBR.CatBoostRegressor, LGBMR.LGBMRegressor, XGBR.XGBRegressor
+        elif kind == "classification":
+            globals()["CatBoostClassifier"] = __import__("catboost", fromlist=["CatBoostClassifier"])
+            globals()["LGBMClassifier"] = __import__("lightgbm", fromlist=["LGBMClassifier"])
+            globals()["XGBClassifier"] = __import__("xgboost", fromlist=["XGBClassifier"])
+    def ImportModuleSet(self, profile):
         modules = self.Profiles[profile]
         for module in modules:
             print(module)
             __import__(profile,  fromlist=[module])
 
-ImportModules().Importing("sklearn.linear_model")
+
