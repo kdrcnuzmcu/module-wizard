@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31f18e89-1080-4c7e-9931-a56d8b287db6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-wizard.py" beforeDir="false" afterPath="$PROJECT_DIR$/module-wizard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/kdrcn/OneDrive/Masaüstü/Py",
+    "last_opened_file_path": "C:/Users/kdrcn/OneDrive/Masaüstü/Py/ModuleWizard",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,6 +46,7 @@
       <updated>1688572189938</updated>
       <workItem from="1688572191125" duration="1544000" />
       <workItem from="1688645114847" duration="2047000" />
+      <workItem from="1688820717448" duration="3794000" />
     </task>
     <servers />
   </component>
