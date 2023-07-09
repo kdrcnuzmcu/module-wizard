@@ -206,3 +206,16 @@ SAMPLES:
         plt.tight_layout()
         plt.get_current_fig_manager()
         plt.show()
+
+    def Scaler(self,
+               col,
+               scaler):
+        Scalers = {
+            "standard": StandardScaler,
+            "robust": RobustScaler,
+            "minmax": MinMaxScaler
+        }
+        S = Scalers[scaler]
+        new_col = S().fit_transform(self.dataframe[[col]])
+        new_col = [np.round(x[0], decimals=4) for x in new_col]
+        self.dataframe[col] = new_col
